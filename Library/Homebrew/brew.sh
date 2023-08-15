@@ -227,12 +227,6 @@ check-run-command-as-root() {
 
   # It's fine to run this as root as it's not changing anything.
   [[ "${HOMEBREW_COMMAND}" == "--prefix" ]] && return
-
-  odie <<EOS
-Running Homebrew as root is extremely dangerous and no longer supported.
-As Homebrew does not drop privileges on installation you would be giving all
-build scripts full access to your system.
-EOS
 }
 
 check-prefix-is-not-tmpdir() {
